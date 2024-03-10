@@ -2,14 +2,14 @@
 ---
 
 ## Description
-ofxiOS is an Open Frameworks addon for the Xbox Kinect that runs on Mac OSX, Linux, and Windows.
-OpenFrameworks is a cross platform open source toolkit for creative coding in C++.
+ofxiOS Modified Version is a carefully revised enhanced version of the openframeworks iOS plug-in. This update is mainly to enhance the flexibility of the plug-in, allowing it to achieve smoother and more efficient interaction between the OpenGL rendering layer and the iOS native layer. This not only greatly simplifies the development process, but also provides developers with a more convenient and efficient work experience. With this improvement, developers can more easily switch between the two levels, allowing for better application development and a better user experience.
 
-[http://www.openframeworks.cc/](http://www.openframeworks.cc/)
-
-#### NOTE: Xbox Kinect models > 1414 (1473, etc) or Kinect4Windows devices that have been plugged into an XBox will not work with ofxiOS on  Mac OSX
-
-If you have an Xbox Kinect model 1473+ or Kinect4Windows device and want to use it with ofxiOS on OSX, DO NOT plug it into an XBox! If you do, it will receive a firmware update which will cause it to freeze after about 20 secs with libfreenect/ofxiOS on OSX. Linux and Windows are fine. The [fix is in the works](https://github.com/OpenKinect/libfreenect/pull/325).
-
-In the meantime, we suggest you get the *original* Xbox Kinect model 1414 and keep those new toys away from an XBox ...
-
+## Modified
+- Added "ofCustomGLRenderer.h"
+- Switch the default renderer, ofGLProgrammableRenderer to ofCustomGLRenderer
+- Add ofxiOSGLKWrapperController class,
+- Change the default viewController from ofxiOSGLKViewController to ofxiOSGLKWrapperController
+- ofxiOSGLKViewController adds pauseRender method
+- ofxiOSGLKWrapperController adds isReadyToRotate, stopRendering, startRendering methods
+- Added @class ofxiOSGLKWrapperController;
+- Remove the temporarily useless ofxiOSImagePicker, ofxiOSMapKit, ofxiOSMapKitListener and other classes

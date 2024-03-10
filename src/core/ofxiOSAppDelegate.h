@@ -38,6 +38,7 @@
 
 @class ofxiOSViewController;
 @class ofxiOSGLKViewController;
+@class ofxiOSGLKWrapperController;
 //@class ofxiOSMTKViewController;
 
 @interface ofxiOSAppDelegate : NSObject <UIApplicationDelegate> {

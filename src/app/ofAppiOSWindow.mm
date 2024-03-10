@@ -31,6 +31,7 @@
 #include <TargetConditionals.h>
 #include "ofAppiOSWindow.h"
 #include "ofGLRenderer.h"
+#include "ofCustomGLRenderer.h"
 #include "ofGLProgrammableRenderer.h"
 #if TARGET_OS_IOS || (TARGET_OS_IPHONE && !TARGET_OS_TV)
     #include "ofxiOSAppDelegate.h"
@@ -105,7 +106,8 @@ void ofAppiOSWindow::setup() {
 	}
 	setOrientation(settings.setupOrientation);
 	if(settings.glesVersion >= ESRendererVersion_20) {
-		currentRenderer = std::shared_ptr<ofBaseRenderer>(new ofGLProgrammableRenderer(this));
+		//currentRenderer = std::shared_ptr<ofBaseRenderer>(new ofGLProgrammableRenderer(this));
+        currentRenderer = std::shared_ptr<ofBaseRenderer>(new ofCustomGLRenderer(this));
 	} else {
 		currentRenderer = std::shared_ptr<ofBaseRenderer>(new ofGLRenderer(this));
 	}
@@ -319,7 +321,8 @@ bool ofAppiOSWindow::enableRendererES2() {
     if(isRendererES2() == true) {
         return false;
     }
-    std::shared_ptr<ofBaseRenderer>renderer (new ofGLProgrammableRenderer(this));
+    //std::shared_ptr<ofBaseRenderer>renderer (new ofGLProgrammableRenderer(this));
+    std::shared_ptr<ofBaseRenderer> renderer(new ofCustomGLRenderer(this));
     ofSetCurrentRenderer(renderer);
     return true;
 }
@@ -335,7 +338,8 @@ bool ofAppiOSWindow::enableRendererES1() {
 
 
 bool ofAppiOSWindow::isProgrammableRenderer() {
-    return (currentRenderer && currentRenderer->getType()==ofGLProgrammableRenderer::TYPE);
+    //return (currentRenderer && currentRenderer->getType()==ofGLProgrammableRenderer::TYPE);
+    return (currentRenderer && currentRenderer->getType()==ofCustomGLRenderer::TYPE);
 }
 
 ofxiOSRendererType ofAppiOSWindow::getGLESVersion() {

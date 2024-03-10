@@ -9,6 +9,7 @@
 #include "ofxiOSApp.h"
 #include "ofAppiOSWindow.h"
 #include "ofGLRenderer.h"
+#include "ofCustomGLRenderer.h"
 #include "ofGLProgrammableRenderer.h"
 #include <TargetConditionals.h>
 #import <GameController/GameController.h>
@@ -100,7 +101,8 @@ static ofxiOSEAGLView * _instanceRef = nil;
     }
     
     if(window->isProgrammableRenderer() == true) {
-        static_cast<ofGLProgrammableRenderer*>(window->renderer().get())->setup(window->getSettings().glesVersion, 0);
+        //static_cast<ofGLProgrammableRenderer*>(window->renderer().get())->setup(window->getSettings().glesVersion, 0);
+        static_cast<ofCustomGLRenderer*>(window->renderer().get())->setup(window->getSettings().glesVersion, 0);
     } else{
         static_cast<ofGLRenderer*>(window->renderer().get())->setup();
     }

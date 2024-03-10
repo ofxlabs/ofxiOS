@@ -47,6 +47,7 @@
         self.glView.delegate = self;
     }
     
+    self.pauseRender = NO;
     return self;
 }
 
@@ -107,8 +108,10 @@
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    [view bindDrawable];
-    [self.glView draw];
+    if (self.pauseRender != YES) {
+        [view bindDrawable];
+        [self.glView draw];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
