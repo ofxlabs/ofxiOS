@@ -1,0 +1,34 @@
+# Xcode project  
+.DS_Store  
+project.pbxproj  
+*.mode1v3  
+*.mode2v3  
+*.perspectivev3  
+*.pbxuser  
+*.xcscheme  
+*.xcworkspace  
+xcuserdata  
+  
+# Xcode cache  
+*.xccheckout  
+DerivedData/  
+build/  
+*.xcuserstate  
+  
+# Objective-C/C++ build files  
+*.o  
+*.dSYM  
+*.dSYM.index  
+*.d  
+*.dylib  
+*.a  
+*.so  
+*.framework  
+  
+# CocoaPods  
+Pods/  
+!Pods/Target Support Files/Pods-YourTargetName/Pods-YourTargetName.debug.xcconfig  
+!Pods/Target Support Files/Pods-YourTargetName/Pods-YourTargetName.release.xcconfig  
+!Pods/Target Support Files/Pods-YourTargetName/Pods-YourTargetName.profile.xcconfig  
+!Pods/Target Support Files/Pods-YourTargetName/Pods-YourTargetName.test.xcconfig  
+  
